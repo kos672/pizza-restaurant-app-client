@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {DishService} from '../dish.service';
 import {Dish} from '../dish.model';
 
@@ -10,12 +10,17 @@ import {Dish} from '../dish.model';
 export class DishListComponent implements OnInit {
 
   dishes: Dish[];
+  filterCategory: number;
 
   constructor(private dishService: DishService) {
   }
 
   ngOnInit() {
     this.dishes = this.dishService.getDishes().slice();
+  }
+
+  setCategory(categoryNumber: number) {
+    this.filterCategory = categoryNumber;
   }
 
 }

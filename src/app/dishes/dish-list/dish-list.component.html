@@ -5,9 +5,9 @@
         Sort by category
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Pizza</a>
-        <a class="dropdown-item" href="#">Spaghetti</a>
-        <a class="dropdown-item" href="#">Lasagna</a>
+        <a class="dropdown-item " (click)="setCategory(2)" style="cursor: pointer">Pizza</a>
+        <a class="dropdown-item" (click)="setCategory(5)" style="cursor: pointer">Spaghetti</a>
+        <a class="dropdown-item" (click)="setCategory(1)" style="cursor: pointer">Risotto</a>
       </div>
     </div>
   </div>
@@ -15,7 +15,7 @@
 <hr>
 <div class="row">
   <div class="col-md-12">
-    <app-dish *ngFor="let dishElement of dishes; let i = index;" [dish]="dishElement" [dishId]="i"></app-dish>
+    <app-dish *ngFor="let dishElement of dishes | dishCategory:filterCategory; let i = index" [dish]="dishElement" [dishId]="i"></app-dish>
   </div>
 </div>
 
