@@ -1,6 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DishService} from '../dish.service';
 import {Dish} from '../dish.model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-dish-list',
@@ -12,7 +13,7 @@ export class DishListComponent implements OnInit {
   dishes: Dish[];
   filterCategory: number;
 
-  constructor(private dishService: DishService) {
+  constructor(private dishService: DishService, private router: Router) {
   }
 
   ngOnInit() {
@@ -21,6 +22,7 @@ export class DishListComponent implements OnInit {
 
   setCategory(categoryNumber: number) {
     this.filterCategory = categoryNumber;
+    this.router.navigate(['dishes']);
   }
 
 }
