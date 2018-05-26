@@ -15,7 +15,7 @@
 <hr>
 <div class="row">
   <div class="col-md-12">
-    <app-dish *ngFor="let dishElement of dishes | dishCategory:filterCategory; let i = index" [dish]="dishElement" [dishId]="i"></app-dish>
+    <app-dish *ngFor="let dishElement of dishes | dishCategory:filterCategory" [dish]="dishElement" [dishId]="dishElement.id - 1"></app-dish>
   </div>
 </div>
 
