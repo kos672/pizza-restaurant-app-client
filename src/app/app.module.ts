@@ -12,6 +12,7 @@ import {DishListComponent} from './dishes/dish-list/dish-list.component';
 import {DishService} from './dishes/dish.service';
 import {HttpClientModule} from '@angular/common/http';
 import { DishCategoryPipe } from './dish-category.pipe';
+import { IngredientsComponent } from './ingredients/ingredients.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { DishCategoryPipe } from './dish-category.pipe';
     DishDetailComponent,
     DishListComponent,
     DishCategoryPipe,
+    IngredientsComponent,
   ],
   imports: [
     BrowserModule,
