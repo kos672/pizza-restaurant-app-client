@@ -5,9 +5,12 @@
         Sort by category
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item " (click)="setCategory(2)" style="cursor: pointer">Pizza</a>
-        <a class="dropdown-item" (click)="setCategory(5)" style="cursor: pointer">Spaghetti</a>
-        <a class="dropdown-item" (click)="setCategory(1)" style="cursor: pointer">Risotto</a>
+        <a class="dropdown-item " (click)="setCategory(1)" style="cursor: pointer">Pizza</a>
+        <a class="dropdown-item" (click)="setCategory(2)" style="cursor: pointer">Spaghetti</a>
+        <a class="dropdown-item" (click)="setCategory(3)" style="cursor: pointer">Lasagne</a>
+        <a class="dropdown-item" (click)="setCategory(4)" style="cursor: pointer">Risotto</a>
+        <a class="dropdown-item" (click)="setCategory(5)" style="cursor: pointer">Ravioli</a>
+        <a class="dropdown-item" (click)="setCategory(6)" style="cursor: pointer">Piadina</a>
       </div>
     </div>
   </div>
@@ -18,5 +21,3 @@
     <app-dish *ngFor="let dishElement of dishes | dishCategory:filterCategory" [dish]="dishElement" [dishId]="dishElement.id - 1"></app-dish>
   </div>
 </div>
-
-
