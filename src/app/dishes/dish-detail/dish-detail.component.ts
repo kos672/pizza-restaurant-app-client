@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Dish} from '../dish.model';
 import {DishService} from '../dish.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
@@ -8,10 +8,11 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
   templateUrl: './dish-detail.component.html',
   styleUrls: ['./dish-detail.component.css']
 })
-export class DishDetailComponent implements OnInit {
+export class DishDetailComponent implements OnInit, OnDestroy {
 
   dish: Dish;
   id: number;
+  subscription;
 
   constructor(private dishService: DishService,
               private router: Router,
@@ -22,9 +23,18 @@ export class DishDetailComponent implements OnInit {
     this.route.params.subscribe(
       (params: Params) => {
         this.id = +params['id'];
-        this.dish = this.dishService.getDish(this.id);
+        this.subscription = this.dishService.getDishes().subscribe(
+          dishes => {
+            this.dish = dishes[this.id]
+          }
+        )
       }
     );
   }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
 
 }
