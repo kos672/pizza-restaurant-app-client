@@ -5,7 +5,7 @@ import {HttpClient} from "@angular/common/http";
 @Injectable()
 export class DishService {
 
-  basePath = 'http://localhost:8080/dishes';
+  readonly basePath = 'http://localhost:8080/dishes';
   dishes: Dish[];
 
   constructor(private http: HttpClient) {
