@@ -7,7 +7,7 @@ import {Dish} from './dishes/dish.model';
 export class DishCategoryPipe implements PipeTransform {
 
   transform(dishes: Dish[], filterCategory: number): Dish[] {
-    return filterCategory >= 0 ? dishes.filter(dish => dish.categoryId === filterCategory) : dishes;
+    return filterCategory > 0 ? dishes.filter(dish => dish.categoryId === filterCategory) : dishes;
   }
 
 }
