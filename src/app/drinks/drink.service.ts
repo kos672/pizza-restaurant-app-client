@@ -1,25 +1,18 @@
+import {Injectable} from "@angular/core";
+import {HttpClient} from "@angular/common/http";
+import {Drink} from "./drink.model";
+
+@Injectable()
 export class DrinkService {
 
-  drinks = [
-    {id: 1, name: 'Coca-Cola', price: 4.99},
-    {id: 1, name: 'Coca-Cola', price: 4.99},
-    {id: 1, name: 'Coca-Cola', price: 4.99},
-    {id: 1, name: 'Coca-Cola', price: 4.99},
-    {id: 1, name: 'Coca-Cola', price: 4.99},
-    {id: 1, name: 'Coca-Cola', price: 4.99},
-    {id: 1, name: 'Coca-Cola', price: 4.99},
-    {id: 1, name: 'Coca-Cola', price: 4.99},
-    {id: 1, name: 'Coca-Cola', price: 4.99},
-    {id: 1, name: 'Coca-Cola', price: 4.99},
-    {id: 1, name: 'Coca-Cola', price: 4.99},
-    {id: 1, name: 'Coca-Cola', price: 4.99},
-    {id: 1, name: 'Coca-Cola', price: 4.99},
-    {id: 1, name: 'Coca-Cola', price: 4.99},
-    {id: 1, name: 'Coca-Cola', price: 4.99},
-  ]
+  readonly basePath = 'http://localhost:8080/drinks';
+
+  constructor(private http: HttpClient) {
+  }
 
   getDrinks() {
-    return this.drinks;
+    return this.http.get<Drink[]>(this.basePath);
   }
+
 
 }
