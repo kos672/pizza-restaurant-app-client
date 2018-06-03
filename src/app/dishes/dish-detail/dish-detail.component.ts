@@ -23,13 +23,13 @@ export class DishDetailComponent implements OnInit, OnDestroy {
     this.route.params.subscribe(
       (params: Params) => {
         this.id = +params['id'];
-        this.subscription = this.dishService.getDishes().subscribe(
-          dishes => {
-            this.dish = dishes[this.id]
-          }
-        )
       }
     );
+    this.subscription = this.dishService.getDishes().subscribe(
+      dishes => {
+        this.dish = dishes[this.id]
+      }
+    )
   }
 
   ngOnDestroy() {
