@@ -1,3 +1,15 @@
-<p>
-  purchase works!
-</p>
+<table class="table" *ngIf="products.length != 0; else noPurchases">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Produkt</th>
+    <th scope="col">Cena</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let product of products; let i = index">
+  <th scope="row">{{i+1}}</th>
+  <td>{{product.name}}</td>
+  <td>{{product.price}}</td>
+  </tbody>
+</table>
+<ng-template #noPurchases><h3>Koszyk jest pusty!</h3></ng-template>
