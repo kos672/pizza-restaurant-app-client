@@ -1,11 +1,12 @@
-<a
+<div
   style="cursor: pointer"
   class="list-group-item clearfix"
-  routerLinkActive="active">
+  routerLinkActive="active"
+  (click)="onAddDrink()">
   <div class="pull-left">
     <h4 class="list-group-item-heading">{{ drink.name }}</h4>
   </div>
   <span class="pull-right">
         <p>{{drink.price}}</p>
       </span>
-</a>
+</div>
