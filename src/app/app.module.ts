@@ -18,7 +18,10 @@ import {DrinkComponent} from './drinks/drink/drink.component';
 import {DrinkService} from './drinks/drink.service';
 import {DeliveryComponent} from './delivery/delivery.component';
 import {PurchaseAddressService} from './delivery/purchase-address.service';
-
+import {PurchaseComponent} from './purchase/purchase.component';
+import {PurchaseService} from './purchase/purchase.service';
+import {PurchaseSummaryService} from './purchase/purchase-summary.service';
+import {ChangeTextDirective} from './change-text.directive';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,8 @@ import {PurchaseAddressService} from './delivery/purchase-address.service';
     DrinksComponent,
     DrinkComponent,
     DeliveryComponent,
+    PurchaseComponent,
+    ChangeTextDirective,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,7 @@ import {PurchaseAddressService} from './delivery/purchase-address.service';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [DishService, DrinkService, PurchaseAddressService],
+  providers: [DishService, DrinkService, PurchaseAddressService, PurchaseService, PurchaseSummaryService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
