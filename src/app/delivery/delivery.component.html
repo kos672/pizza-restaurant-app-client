@@ -6,6 +6,7 @@
           <div class="col-md-12">
             <div class="form-group">
               <label for="city">Miasto</label>
+              <div class="help-block" *ngIf="!addressForm.get('address.city').valid && addressForm.get('address.city').touched">Miasto jest wymagane</div>
               <input class="form-control" type="text" id="city" formControlName="city">
             </div>
           </div>
@@ -14,6 +15,7 @@
           <div class="col-md-12">
             <div class="form-group">
               <label for="street">Ulica</label>
+              <div class="help-block" *ngIf="!addressForm.get('address.street').valid && addressForm.get('address.street').touched">Ulica jest wymagana</div>
               <input class="form-control" type="text" id="street" formControlName="street">
             </div>
           </div>
@@ -24,6 +26,7 @@
           <div class="col-md-12">
             <div class="form-group">
               <label for="houseNumber">Nr domu</label>
+              <div class="help-block" *ngIf="!addressForm.get('purchaseAddress.houseNumber').valid && addressForm.get('purchaseAddress.houseNumber').touched">Nr domu jest wymagany</div>
               <input class="form-control" type="text" id="houseNumber" formControlName="houseNumber">
             </div>
           </div>
@@ -39,7 +42,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <button class="btn btn-success" type="submit">Zapisz</button>
+          <button class="btn btn-success" type="submit" disabled="!addressForm.valid">Zapisz</button>
         </div>
       </div>
     </form>

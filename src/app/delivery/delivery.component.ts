@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Address} from './address.model';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-delivery',
@@ -20,11 +20,11 @@ export class DeliveryComponent implements OnInit {
   ngOnInit() {
     this.addressForm = this.formBuilder.group({
       address: new FormGroup({
-        city: new FormControl(''),
-        street: new FormControl('')
+        city: new FormControl('', Validators.required),
+        street: new FormControl('', Validators.required)
       }),
       purchaseAddress: new FormGroup({
-        houseNumber: new FormControl(''),
+        houseNumber: new FormControl('', Validators.required),
         flatNumber: new FormControl('')
       })
     });
