@@ -13,11 +13,11 @@ export class ChangeTextDirective {
   @HostListener('mouseenter') onMouseEnter() {
     this.initialState = this.element.nativeElement.innerHTML;
     const afterMouseEnterState = 'Przejdź do koszyka';
-    this.element.nativeElement.innerHTML = afterMouseEnterState;
+    this.element.nativeElement.innerText = afterMouseEnterState;
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-    this.element.nativeElement.innerHTML = this.initialState;
+    this.element.nativeElement.innerText = this.initialState;
   }
 
 }
