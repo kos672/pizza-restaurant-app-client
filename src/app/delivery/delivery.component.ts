@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Address} from './address.model';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {PurchaseAddressService} from './purchase-address.service';
 
 @Component({
   selector: 'app-delivery',
@@ -11,9 +12,10 @@ export class DeliveryComponent implements OnInit {
 
   addressForm: FormGroup;
   address: Address;
+  isPrivateHouse = false;
 
   constructor(private formBuilder: FormBuilder,
-              // private purchaseAddressService: PurchaseAddressService
+              private purchaseAddressService: PurchaseAddressService
   ) {
   }
 
@@ -33,9 +35,9 @@ export class DeliveryComponent implements OnInit {
   onSubmit() {
     this.address = this.addressForm.get('address').value;
     // TODO: don't forget to pass 'purchaseAddress' formGroup further
-    // this.purchaseAddressService.purchaseAddress.next(
-    //   this.addressForm.get('purchaseAddress').value
-    // );
+    this.purchaseAddressService.purchaseAddress.next(
+      this.addressForm.get('purchaseAddress').value
+    );
   }
 
 }
