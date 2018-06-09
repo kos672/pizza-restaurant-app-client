@@ -20,7 +20,6 @@ import {DeliveryComponent} from './delivery/delivery.component';
 import {PurchaseAddressService} from './delivery/purchase-address.service';
 import {PurchaseComponent} from './purchase/purchase.component';
 import {PurchaseService} from './purchase/purchase.service';
-import {PurchaseSummaryService} from './purchase/purchase-summary.service';
 import {ChangeTextDirective} from './change-text.directive';
 
 @NgModule({
@@ -46,7 +45,7 @@ import {ChangeTextDirective} from './change-text.directive';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [DishService, DrinkService, PurchaseAddressService, PurchaseService, PurchaseSummaryService],
+  providers: [DishService, DrinkService, PurchaseAddressService, PurchaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

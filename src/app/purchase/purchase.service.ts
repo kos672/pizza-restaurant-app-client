@@ -1,30 +1,22 @@
-import {Injectable} from '@angular/core';
-import {PurchaseSummaryService} from './purchase-summary.service';
+import {Subject} from 'rxjs/Subject';
 
-@Injectable()
 export class PurchaseService {
 
   products: { name: string, price: number }[] = [];
-
-  constructor(private purchaseSummaryService: PurchaseSummaryService) {
-  }
+  onProductPriceChanged = new Subject<number>();
 
   addProduct(product: { name: string, price: number }) {
     this.products.push(product);
-    this.purchaseSummaryService.summary.next(this.countSummaryPrice());
+    this.onProductPriceChanged.next(this.countSummaryPrice());
   }
 
   deleteProduct(id: number) {
     this.products.splice(id, 1);
-    this.purchaseSummaryService.summary.next(this.countSummaryPrice());
+    this.onProductPriceChanged.next(this.countSummaryPrice());
   }
 
   countSummaryPrice() {
-    let sum = 0;
-    for (let i = 0; i < this.products.length; i++) {
-      sum += this.products[i].price;
-    }
-    return sum;
+    return this.products.reduce((acc, product) => acc + product.price, 0);
   }
 
 }

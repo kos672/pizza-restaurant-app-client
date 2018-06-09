@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {PurchaseSummaryService} from '../purchase/purchase-summary.service';
+import {Subscription} from 'rxjs/Subscription';
+import {PurchaseService} from '../purchase/purchase.service';
 
 @Component({
   selector: 'app-header',
@@ -9,19 +10,19 @@ import {PurchaseSummaryService} from '../purchase/purchase-summary.service';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   purchaseSummary = 0;
+  purchaseSummaryChange$: Subscription;
 
-  constructor(private purchaseSummaryService: PurchaseSummaryService) {
+  constructor(private purchaseService: PurchaseService) {
   }
 
   ngOnInit() {
-    this.purchaseSummaryService.summary.subscribe(
-      observer => this.purchaseSummary = observer
+    this.purchaseSummaryChange$ = this.purchaseService.onProductPriceChanged.subscribe(
+      next => this.purchaseSummary = next
     );
-
   }
 
   ngOnDestroy(): void {
-    this.purchaseSummaryService.summary.unsubscribe();
+    this.purchaseSummaryChange$.unsubscribe();
   }
 
 }
