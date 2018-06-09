@@ -4,7 +4,7 @@
     <th scope="col">#</th>
     <th scope="col">Produkt</th>
     <th scope="col">Cena</th>
-    <th scope="col">&</th>
+    <th scope="col"></th>
   </tr>
   </thead>
   <tbody *ngFor="let product of products; let i = index">
@@ -15,5 +15,6 @@
     <button class="btn btn-danger" (click)="onDelete(i)">X</button>
   </td>
   </tbody>
+  <button class="btn btn-success" routerLink="/delivery">Złóż zamówienie</button>
 </table>
 <ng-template #noPurchases><h3>Koszyk jest pusty!</h3></ng-template>
