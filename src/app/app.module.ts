@@ -21,6 +21,8 @@ import {PurchaseAddressService} from './delivery/purchase-address.service';
 import {PurchaseComponent} from './purchase/purchase.component';
 import {PurchaseService} from './purchase/purchase.service';
 import {ChangeTextDirective} from './change-text.directive';
+import {SummaryComponent} from './summary/summary.component';
+import {ProductAddedDirective} from './product-added.directive';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import {ChangeTextDirective} from './change-text.directive';
     DeliveryComponent,
     PurchaseComponent,
     ChangeTextDirective,
+    SummaryComponent,
+    ProductAddedDirective,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-md-8">
+    <table class="table">
+      <thead>
+      <tr class="table-info">
+        <th scope="col">#</th>
+        <th scope="col">Produkt</th>
+        <th scope="col">Cena</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let product of products; let i = index">
+      <th style="width: 200px">{{i+1}}</th>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      </tbody>
+    </table>
+    <div class="row" style="margin-top: 20px">
+      <div class="col-md-6">
+        <input class="form-control" type="text" [placeholder]="address.city" readonly>
+      </div>
+      <div class="col-md-6">
+        <input class="form-control" type="text" [placeholder]="purchaseAddress.houseNumber" readonly>
+      </div>
+      <div class="col-md-6">
+        <input class="form-control" type="text" [placeholder]="address.street" readonly>
+      </div>
+      <div class="col-md-6" *ngIf="purchaseAddress.flatNumber != 0">
+        <input class="form-control" type="text" [placeholder]="purchaseAddress.flatNumber" readonly>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 20px">
+      <div class="col-md-12">
+        <div class="form-group">
+          <input id="ASAP" type="checkbox" (click)="ASAP=!ASAP">
+          <label for="ASAP">Jak najszybciej? ({{now | date: "shortTime"}})</label>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="!ASAP">
+      <div class="col-md-3">
+        <input class="form-control" type="time">
+      </div>
+    </div>
+    <div class="row" style="margin-top: 20px">
+      <div class="col-md-12">
+        <textarea class="form-control" type="text" placeholder="Uwagi do zamówienia..."></textarea>
+      </div>
+    </div>
+    <div style="margin-top: 20px">
+      <button class="btn btn-warning" routerLink="/purchase"><— Popraw</button>
+      <button class="btn btn-success" routerLink="/delivery">Złóż zamówienie</button>
+    </div>
+  </div>
+</div>
+

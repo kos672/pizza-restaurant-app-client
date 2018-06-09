@@ -5,6 +5,7 @@ import {DishDetailComponent} from './dishes/dish-detail/dish-detail.component';
 import {DrinksComponent} from './drinks/drinks.component';
 import {DeliveryComponent} from './delivery/delivery.component';
 import {PurchaseComponent} from './purchase/purchase.component';
+import {SummaryComponent} from './summary/summary.component';
 
 const appRoutes: Route[] = [
   {
@@ -14,7 +15,8 @@ const appRoutes: Route[] = [
   },
   {path: 'drinks', component: DrinksComponent},
   {path: 'delivery', component: DeliveryComponent},
-  {path: 'purchase', component: PurchaseComponent}
+  {path: 'purchase', component: PurchaseComponent},
+  {path: 'summary', component: SummaryComponent}
 ]
 
 @NgModule({
