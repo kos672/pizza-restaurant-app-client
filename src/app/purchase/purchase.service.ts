@@ -14,6 +14,11 @@ export class PurchaseService {
     this.purchaseSummaryService.summary.next(this.countSummaryPrice());
   }
 
+  deleteProduct(id: number) {
+    this.products.splice(id, 1);
+    this.purchaseSummaryService.summary.next(this.countSummaryPrice());
+  }
+
   countSummaryPrice() {
     let sum = 0;
     for (let i = 0; i < this.products.length; i++) {

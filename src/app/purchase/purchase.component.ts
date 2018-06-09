@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PurchaseService} from './purchase.service';
 
 @Component({
@@ -8,11 +8,16 @@ import {PurchaseService} from './purchase.service';
 })
 export class PurchaseComponent implements OnInit {
 
-  products: { name: string, price: number }[];
+  products: { name: string, price: number }[] = [];
 
-  constructor(private purchaseService: PurchaseService) { }
+  constructor(private purchaseService: PurchaseService) {
+  }
 
-  ngOnInit() {
+  onDelete(id: number) {
+    this.purchaseService.deleteProduct(id);
+  }
+
+  ngOnInit(): void {
     this.products = this.purchaseService.products;
   }
 
