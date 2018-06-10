@@ -23,6 +23,7 @@ import {PurchaseService} from './purchase/purchase.service';
 import {ChangeTextDirective} from './change-text.directive';
 import {SummaryComponent} from './summary/summary.component';
 import {ProductAddedDirective} from './product-added.directive';
+import {PayMethodService} from './shared/pay-method.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import {ProductAddedDirective} from './product-added.directive';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [DishService, DrinkService, PurchaseAddressService, PurchaseService],
+  providers: [DishService, DrinkService, PurchaseAddressService, PurchaseService, PayMethodService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
