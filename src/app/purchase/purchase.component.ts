@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PurchaseService} from './purchase.service';
+import {Product} from '../shared/product.model';
 
 @Component({
   selector: 'app-purchase',
@@ -8,7 +9,7 @@ import {PurchaseService} from './purchase.service';
 })
 export class PurchaseComponent implements OnInit {
 
-  products: { name: string, price: number }[] = [];
+  products: Product[] = [];
 
   constructor(private purchaseService: PurchaseService) {
   }

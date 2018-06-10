@@ -36,7 +36,7 @@ export class DishDetailComponent implements OnInit, OnDestroy {
   }
 
   onAddDish() {
-    this.purchaseService.addProduct({name: this.dish.name, price: this.dish.price});
+    this.purchaseService.addProduct({id: this.dish.id, name: this.dish.name, price: this.dish.price, isDish: true});
   }
 
   ngOnDestroy() {

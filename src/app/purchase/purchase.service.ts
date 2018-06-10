@@ -1,11 +1,12 @@
 import {Subject} from 'rxjs/Subject';
+import {Product} from '../shared/product.model';
 
 export class PurchaseService {
 
-  products: { name: string, price: number }[] = [];
+  products: Product[] = [];
   onProductPriceChanged = new Subject<number>();
 
-  addProduct(product: { name: string, price: number }) {
+  addProduct(product: Product) {
     this.products.push(product);
     this.onProductPriceChanged.next(this.countSummaryPrice());
   }

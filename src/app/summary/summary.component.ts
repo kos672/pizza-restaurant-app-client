@@ -3,6 +3,7 @@ import {PurchaseService} from '../purchase/purchase.service';
 import {PurchaseAddressService} from '../delivery/purchase-address.service';
 import {Address} from '../delivery/address.model';
 import {Subscription} from 'rxjs/Subscription';
+import {Product} from '../shared/product.model';
 
 @Component({
   selector: 'app-summary',
@@ -11,7 +12,7 @@ import {Subscription} from 'rxjs/Subscription';
 })
 export class SummaryComponent implements OnInit, OnDestroy {
 
-  products: { name: string, price: number }[] = [];
+  products: Product[] = [];
   address: Address;
   purchaseAddress: { houseNumber: string; flatNumber: number };
   addressChange$: Subscription;
@@ -37,6 +38,7 @@ export class SummaryComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.addressChange$.unsubscribe();
+    this.purchaseAddressChange$.unsubscribe();
   }
 
 }

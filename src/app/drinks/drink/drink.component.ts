@@ -18,7 +18,7 @@ export class DrinkComponent implements OnInit {
   }
 
   onAddDrink() {
-    this.purchaseService.addProduct({name: this.drink.name, price: this.drink.price});
+    this.purchaseService.addProduct({id: this.drink.id, name: this.drink.name, price: this.drink.price, isDish: false});
   }
 
 }
