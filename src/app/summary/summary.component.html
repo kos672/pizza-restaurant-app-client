@@ -33,7 +33,7 @@
       <div class="col-md-12">
         <div class="form-group">
           <input id="ASAP" type="checkbox" (click)="ASAP=!ASAP">
-          <label for="ASAP">Jak najszybciej? ({{now | date: "shortTime"}})</label>
+          <label for="ASAP">Jak najszybciej? (~{{now | date: "shortTime"}})</label>
         </div>
       </div>
     </div>
@@ -49,7 +49,7 @@
     </div>
     <div style="margin-top: 20px">
       <button class="btn btn-warning" routerLink="/purchase"><— Popraw</button>
-      <button class="btn btn-success" routerLink="/delivery">Złóż zamówienie</button>
+      <button class="btn btn-success">Złóż zamówienie</button>
     </div>
   </div>
 </div>

@@ -32,17 +32,7 @@ export class SummaryComponent implements OnInit, OnDestroy {
       next => this.purchaseAddress = next
     )
     this.products = this.purchaseService.products;
-    this.now = new Date(Date.now() + this.simulateMinutesDependingOnDayTime() * 60000);
-  }
-
-  simulateMinutesDependingOnDayTime(): number {
-    const currentTime = new Date(Date.now());
-    console.log(currentTime.getHours())
-    if (currentTime.getHours() >= 8 && currentTime.getHours() < 11 || currentTime.getHours() >= 15 && currentTime.getHours() < 20) {
-      return 40;
-    } else if (currentTime.getHours() > 11 && currentTime.getHours() < 15 || currentTime.getHours() >= 20 && currentTime.getHours() <= 23) {
-      return 20;
-    }
+    this.now = new Date(Date.now() + 30 * 60000);
   }
 
   ngOnDestroy() {

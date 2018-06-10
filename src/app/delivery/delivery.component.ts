@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Address} from './address.model';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {PurchaseAddressService} from './purchase-address.service';
 import {Router} from '@angular/router';
@@ -12,7 +11,6 @@ import {Router} from '@angular/router';
 export class DeliveryComponent implements OnInit {
 
   addressForm: FormGroup;
-  address: Address;
   isPrivateHouse = false;
 
   constructor(private formBuilder: FormBuilder,
