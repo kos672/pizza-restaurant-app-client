@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {DrinkService} from "./drink.service";
-import {Drink} from "./drink.model";
+import {DrinkService} from './drink.service';
+import {Drink} from './drink.model';
 
 @Component({
   selector: 'app-drinks',
