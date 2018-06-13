@@ -1,10 +1,22 @@
 import {Subject} from 'rxjs/Subject';
 import {Product} from '../shared/product.model';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Purchase} from './purchase.model';
+import {GlobalConstants} from '../shared/global-constants';
 
+@Injectable()
 export class PurchaseService {
 
   products: Product[] = [];
   onProductPriceChanged = new Subject<number>();
+
+  constructor(private http: HttpClient) {
+  }
+
+  createPurchase(purchase: Purchase) {
+    return this.http.post(GlobalConstants.basePath + '/purchases', purchase);
+  }
 
   addProduct(product: Product) {
     this.products.push(product);
