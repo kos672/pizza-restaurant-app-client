@@ -29,28 +29,40 @@
         <input class="form-control" type="text" [placeholder]="purchaseAddress.flatNumber" readonly>
       </div>
     </div>
-    <div class="row" style="margin-top: 20px">
-      <div class="col-md-12">
-        <div class="form-group">
-          <input id="ASAP" type="checkbox" (click)="ASAP=!ASAP">
-          <label for="ASAP">Jak najszybciej? (~{{now | date: "shortTime"}})</label>
+    <form [formGroup]=summaryForm (ngSubmit)="onSubmit()">
+      <div class="row" style="margin-top: 20px">
+        <div class="col-md-12">
+          <div class="form-group">
+            <input id="ASAP" type="checkbox" (click)="ASAP=!ASAP">
+            <label for="ASAP">Jak najszybciej? (~{{deliveryTime | date: "shortTime"}})</label>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row" *ngIf="!ASAP">
-      <div class="col-md-3">
-        <input class="form-control" type="time">
+      <div class="row" *ngIf="!ASAP">
+        <div class="col-md-3">
+          <input class="form-control" type="time" formControlName="time">
+        </div>
       </div>
-    </div>
-    <div class="row" style="margin-top: 20px">
-      <div class="col-md-12">
-        <textarea class="form-control" type="text" placeholder="Uwagi do zamówienia..."></textarea>
+      <div class="row">
+        <div class="col md-3">
+          <select class="custom-select my-1 mr-sm-2" id="payMethodSelect" formControlName="payMethod">
+            <option disabled selected>Metoda płatności</option>
+            <option [value]="i+1" *ngFor="let method of payMethods; let i = index">{{method.name}}</option>
+          </select>
+        </div>
       </div>
-    </div>
+      <div class="row" style="margin-top: 20px">
+        <div class="col-md-12">
+          <textarea class="form-control" type="text" placeholder="Uwagi do zamówienia..."
+                    formControlName="notes"></textarea>
+        </div>
+      </div>
     <div style="margin-top: 20px">
       <button class="btn btn-warning" routerLink="/purchase"><— Popraw</button>
-      <button class="btn btn-success">Złóż zamówienie</button>
+      <button class="btn btn-success" type="submit">Złóż zamówienie</button>
     </div>
+    </form>
   </div>
+
 </div>
 
