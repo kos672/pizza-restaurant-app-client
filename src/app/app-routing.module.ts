@@ -6,6 +6,7 @@ import {DrinksComponent} from './drinks/drinks.component';
 import {DeliveryComponent} from './delivery/delivery.component';
 import {PurchaseComponent} from './purchase/purchase.component';
 import {SummaryComponent} from './summary/summary.component';
+import {SuccessfulComponent} from './successful/successful.component';
 
 const appRoutes: Route[] = [
   {
@@ -16,7 +17,8 @@ const appRoutes: Route[] = [
   {path: 'drinks', component: DrinksComponent},
   {path: 'delivery', component: DeliveryComponent},
   {path: 'purchase', component: PurchaseComponent},
-  {path: 'summary', component: SummaryComponent}
+  {path: 'summary', component: SummaryComponent},
+  {path: 'successful', component: SuccessfulComponent}
 ]
 
 @NgModule({

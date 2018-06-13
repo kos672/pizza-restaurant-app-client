@@ -24,6 +24,7 @@ import {ChangeTextDirective} from './change-text.directive';
 import {SummaryComponent} from './summary/summary.component';
 import {ProductAddedDirective} from './product-added.directive';
 import {PayMethodService} from './shared/pay-method.service';
+import {SuccessfulComponent} from './successful/successful.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import {PayMethodService} from './shared/pay-method.service';
     ChangeTextDirective,
     SummaryComponent,
     ProductAddedDirective,
+    SuccessfulComponent,
   ],
   imports: [
     BrowserModule,
