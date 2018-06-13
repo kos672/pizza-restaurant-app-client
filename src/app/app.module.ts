@@ -25,6 +25,7 @@ import {SummaryComponent} from './summary/summary.component';
 import {ProductAddedDirective} from './product-added.directive';
 import {PayMethodService} from './shared/pay-method.service';
 import {SuccessfulComponent} from './successful/successful.component';
+import {HomeComponent} from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import {SuccessfulComponent} from './successful/successful.component';
     SummaryComponent,
     ProductAddedDirective,
     SuccessfulComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

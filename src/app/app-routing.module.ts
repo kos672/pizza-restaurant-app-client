@@ -7,8 +7,10 @@ import {DeliveryComponent} from './delivery/delivery.component';
 import {PurchaseComponent} from './purchase/purchase.component';
 import {SummaryComponent} from './summary/summary.component';
 import {SuccessfulComponent} from './successful/successful.component';
+import {HomeComponent} from './home/home.component';
 
 const appRoutes: Route[] = [
+  {path: '', component: HomeComponent, pathMatch: 'full'},
   {
     path: 'dishes', component: DishesComponent, children: [
       {path: ':id', component: DishDetailComponent}
