@@ -45,6 +45,10 @@
       </div>
       <div class="row">
         <div class="col md-3">
+          <small class="form-text help-block"
+                 *ngIf="!summaryForm.get('payMethod').valid && summaryForm.get('payMethod').touched">
+            Proszę wybrać metodę płatności
+          </small>
           <select class="custom-select my-1 mr-sm-2" id="payMethodSelect" formControlName="payMethod">
             <option disabled selected>Metoda płatności</option>
             <option [value]="i+1" *ngFor="let method of payMethods; let i = index">{{method.name}}</option>
@@ -59,7 +63,7 @@
       </div>
     <div style="margin-top: 20px">
       <button class="btn btn-warning" routerLink="/purchase"><— Popraw</button>
-      <button class="btn btn-success" type="submit">Złóż zamówienie</button>
+      <button class="btn btn-success" type="submit" [disabled]="summaryForm.invalid">Złóż zamówienie</button>
     </div>
     </form>
   </div>
