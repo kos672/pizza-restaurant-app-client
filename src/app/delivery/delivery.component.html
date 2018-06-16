@@ -10,6 +10,10 @@
                      *ngIf="!addressForm.get('address.city').valid && addressForm.get('address.city').touched">
                 Miasto jest wymagane
               </small>
+              <small class="form-text help-block" *ngIf="addressForm.get('address.city').touched &&
+              addressForm.get('address.street').touched && addressForm.hasError('noAddress', ['address'])">Na poniższy
+                adres, dostawa, niestety, nie może być zrealizowana
+              </small>
               <input class="form-control" type="text" id="city" formControlName="city">
             </div>
           </div>

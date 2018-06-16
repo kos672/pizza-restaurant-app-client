@@ -26,6 +26,7 @@ import {ProductAddedDirective} from './product-added.directive';
 import {PayMethodService} from './shared/pay-method.service';
 import {SuccessfulComponent} from './successful/successful.component';
 import {HomeComponent} from './home/home.component';
+import {AddressService} from './delivery/address.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,7 @@ import {HomeComponent} from './home/home.component';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [DishService, DrinkService, PurchaseAddressService, PurchaseService, PayMethodService],
+  providers: [DishService, DrinkService, PurchaseAddressService, PurchaseService, PayMethodService, AddressService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
