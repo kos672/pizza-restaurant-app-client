@@ -1,11 +1,11 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {PurchaseService} from '../purchase/purchase.service';
+import {PurchasesService} from '../purchases/purchases.service';
 import {PurchaseAddressService} from '../delivery/purchase-address.service';
 import {Address} from '../delivery/address.model';
 import {Subscription} from 'rxjs/Subscription';
 import {Product} from '../shared/product.model';
 import {PayMethodService} from '../shared/pay-method.service';
-import {Purchase} from '../purchase/purchase.model';
+import {Purchase} from '../purchases/purchase.model';
 import {PayMethod} from '../shared/pay-method.model';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
@@ -46,7 +46,7 @@ export class SummaryComponent implements OnInit, OnDestroy {
     drinks: []
   };
 
-  constructor(private purchaseService: PurchaseService,
+  constructor(private purchaseService: PurchasesService,
               private purchaseAddressService: PurchaseAddressService,
               private payMethodService: PayMethodService,
               private formBuilder: FormBuilder,

@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
-import {PurchaseService} from '../purchase/purchase.service';
+import {PurchasesService} from '../purchases/purchases.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   purchaseSummary = 0;
   purchaseSummaryChange$: Subscription;
 
-  constructor(private purchaseService: PurchaseService) {
+  constructor(private purchaseService: PurchasesService) {
   }
 
   ngOnInit() {

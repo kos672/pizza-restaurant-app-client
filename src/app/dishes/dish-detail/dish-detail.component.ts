@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Dish} from '../dish.model';
 import {DishService} from '../dish.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
-import {PurchaseService} from '../../purchase/purchase.service';
+import {PurchasesService} from '../../purchases/purchases.service';
 
 @Component({
   selector: 'app-dish-detail',
@@ -19,7 +19,7 @@ export class DishDetailComponent implements OnInit, OnDestroy {
   constructor(private dishService: DishService,
               private router: Router,
               private route: ActivatedRoute,
-              private purchaseService: PurchaseService) {
+              private purchaseService: PurchasesService) {
   }
 
   ngOnInit() {

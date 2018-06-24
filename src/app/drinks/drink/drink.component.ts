@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Drink} from '../drink.model';
-import {PurchaseService} from '../../purchase/purchase.service';
+import {PurchasesService} from '../../purchases/purchases.service';
 
 @Component({
   selector: 'app-drink',
@@ -11,7 +11,7 @@ export class DrinkComponent implements OnInit {
 
   @Input() drink: Drink;
 
-  constructor(private purchaseService: PurchaseService) {
+  constructor(private purchaseService: PurchasesService) {
   }
 
   ngOnInit() {
