@@ -1,0 +1,24 @@
+<div
+  style="cursor: pointer"
+  class="list-group-item clearfix"
+  [routerLink]="[purchaseId]"
+>
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="list-group-item-heading">{{ purchase.id }}</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <p>ul. {{purchase.address.street}}</p>
+    </div>
+    <div class="col-md-4">
+      <p>{{purchase.houseNumber}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p>{{purchase.address.city}}</p>
+    </div>
+  </div>
+</div>
