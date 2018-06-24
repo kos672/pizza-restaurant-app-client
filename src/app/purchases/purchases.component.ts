@@ -1,17 +1,17 @@
 import {Component, OnInit} from '@angular/core';
-import {PurchaseService} from './purchase.service';
+import {PurchasesService} from './purchases.service';
 import {Product} from '../shared/product.model';
 
 @Component({
-  selector: 'app-purchase',
-  templateUrl: './purchase.component.html',
-  styleUrls: ['./purchase.component.css']
+  selector: 'app-purchases',
+  templateUrl: './purchases.component.html',
+  styleUrls: ['./purchases.component.css']
 })
-export class PurchaseComponent implements OnInit {
+export class PurchasesComponent implements OnInit {
 
   products: Product[] = [];
 
-  constructor(private purchaseService: PurchaseService) {
+  constructor(private purchaseService: PurchasesService) {
   }
 
   onDelete(id: number) {

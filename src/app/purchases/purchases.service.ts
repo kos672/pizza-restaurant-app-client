@@ -4,9 +4,10 @@ import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Purchase} from './purchase.model';
 import {GlobalConstants} from '../shared/global-constants';
+import {PurchaseExport} from './purchase-export.model';
 
 @Injectable()
-export class PurchaseService {
+export class PurchasesService {
 
   products: Product[] = [];
   onProductPriceChanged = new Subject<number>();
@@ -16,6 +17,10 @@ export class PurchaseService {
 
   createPurchase(purchase: Purchase) {
     return this.http.post(GlobalConstants.basePath + '/purchases', purchase);
+  }
+
+  getAllPurchases() {
+    return this.http.get<PurchaseExport[]>(GlobalConstants.basePath + '/purchases');
   }
 
   addProduct(product: Product) {

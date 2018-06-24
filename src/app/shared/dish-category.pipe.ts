@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {Dish} from './dishes/dish.model';
+import {Dish} from '../dishes/dish.model';
 
 @Pipe({
   name: 'dishCategory'
