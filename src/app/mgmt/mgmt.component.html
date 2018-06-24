@@ -1,0 +1,13 @@
+<div class="row" *ngIf="purchases; else spinner">
+  <div class="col-md-4">
+    <div class="col-md-12" style="margin-bottom: 30px" *ngFor="let purchaseEl of purchases">
+      <app-purchase [purchase]="purchaseEl" [purchaseId]="purchaseEl.id - 1"></app-purchase>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<ng-template #spinner>
+  <div class="col-md-12 loader"></div>
+</ng-template>
