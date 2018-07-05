@@ -1,3 +1,3 @@
 export class GlobalConstants {
-  static readonly basePath = 'http://localhost:8080';
+  static readonly basePath = 'https://salty-stream-10924.herokuapp.com';
 }
